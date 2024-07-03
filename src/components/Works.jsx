@@ -6,7 +6,7 @@ import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { Tilt } from "react-tilt";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const ProjectCard = ({
   index,
@@ -17,13 +17,14 @@ const ProjectCard = ({
   source_code_link,
   live_site,
 }) => (
-  <motion.div variants={fadeIn("up", "spring")}>
-    <Tilt className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
+  <div variants={fadeIn("up", "spring")}>
+    <div className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full">
       <div className="relative w-full h-[230px]">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover rounded-2xl" />
+          className="w-full h-full object-cover rounded-2xl"
+        />
         <div className="absolute inset-0 flex justify-end m-3 card-img_hover gap-2">
           <div
             onClick={() => window.open(source_code_link, "_blank")}
@@ -32,7 +33,8 @@ const ProjectCard = ({
             <img
               src={github}
               alt="github"
-              className="w-1/2 h-1/2 object-contain" />
+              className="w-1/2 h-1/2 object-contain"
+            />
           </div>
           <div
             onClick={() => window.open(live_site, "_blank")}
@@ -41,7 +43,8 @@ const ProjectCard = ({
             <img
               src={live}
               alt="github"
-              className="w-1/2 h-1/2 object-contain" />
+              className="w-1/2 h-1/2 object-contain"
+            />
           </div>
         </div>
       </div>
@@ -56,26 +59,25 @@ const ProjectCard = ({
           </p>
         ))}
       </div>
-    </Tilt>
-  </motion.div>
+    </div>
+  </div>
 );
 
 const Works = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <div >
         <p className={styles.sectionSubText}>My Projects</p>
         <h2 className={styles.sectionHeadText}>Projects.</h2>
-      </motion.div>
+      </div>
       <div className="w-full flex">
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+        <p
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           Below are some of the key projects I have completed, showcasing my
           ability to use a wide range of technologies including HTML, CSS,
           JavaScript, React, Bootstrap, Tailwind, Sass, and TypeScript.
-        </motion.p>
+        </p>
       </div>
       <div className="mt-20 flex flex-wrap gap-7">
         {projects.map((project, index) => (
